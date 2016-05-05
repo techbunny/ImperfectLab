@@ -123,8 +123,7 @@
       "type": "string",
       "defaultValue": "Standard_A1"
     }
-   
- 
+
    },
       
     "variables": {
@@ -135,7 +134,7 @@
        "vmStorageAccountContainerName": "vhds",
        "imagePublisher": "MicrosoftWindowsServer",
        "imageOffer": "WindowsServer",
-       "OSDiskName": "osdisk"       
+       "osDiskName": "[concat('osdisk_', parameters('vmName'))]"    
     },
     
     
