@@ -8,50 +8,47 @@ Set-AzureRmContext -SubscriptionID $VSSubID
 
 get-azurermresourcegroup | Format-Table ResourceGroupName, Location
 
-Get-AzureRmVm -ResourceGroupName SmallCloudLab | Format-Table Name
+Get-AzureRmVm -ResourceGroupName ImperfectLab | Format-Table Name
 
-#cleanup 
+remove
 
-Remove-AzureRmResourceGroup -Name NanoNano
-Remove-AzureRmResourceGroup -Name NanoNano2
-Remove-AzureRmResourceGroup -Name NanoNano3
-Remove-AzureRmResourceGroup -Name RecoverHere
-Remove-AzureRmResourceGroup -Name SmallCloudLab
 
 #template variables
 
-$assetLocation = "https://raw.githubusercontent.com/techbunny/Templates/master/smallcloudlab/" 
-$templateFileURI  = $assetLocation + "smalllabdeploy_nsg.json" 
-$parameterFileURI = $assetLocation + "azuredeploy.parameters.json" 
+$assetLocation = "https://raw.githubusercontent.com/techbunny/ImperfectLab/master/" 
+$templateFileURI  = $assetLocation + "imperfectlabdeploy.json" 
+$parameterFileURI = $assetLocation + "imperfectlabdc01.parameters.json" 
+
+$assetLocation = "https://raw.githubusercontent.com/techbunny/ImperfectLab/master/" 
+$templateFileURI  = $assetLocation + "imperfectlabdeploy.json" 
+$parameterFileURI = $assetLocation + "imperfectlabdc02.parameters.json" 
 
 
 # Deploy the Template to the Resource Group
 
-New-AzureRmResourceGroup -Name "SmallCloudLab" -Location "West US"
+New-AzureRmResourceGroup -Name "ImperfectLab" -Location "West US"
 
-New-AzureRmResourceGroupDeployment -ResourceGroupName 'SmallCloudLab' -TemplateURI $templateFileURI -ParameterFileURI $parameterFileURI -Verbose
+New-AzureRmResourceGroupDeployment -ResourceGroupName "ImperfectLab" -TemplateURI $templateFileURI -TemplateParameterURI $parameterFileURI -Verbose
 
-Get-AzureRmLog -Status Failed -ResourceGroup "SmallCloudLab" -DetailedOutput 
-
-
+Get-AzureRmLog -Status Failed -ResourceGroup "ImperfectLab" -DetailedOutput 
 
 
-#on gateway machine
-winrm set winrm/config/client @{ TrustedHosts="40.76.47.200” }
+#on management or gateway machine in CMD
+winrm set winrm/config/client @{ TrustedHosts="13.88.16.207” }
 winrm set winrm/config/
 
 
-$ip = "104.40.93.91"
+$ip = "104.40.54.0"
 $ipAdministrator = "sysadmin"
 
 #connect to target machine
 $s = New-PSSession -ComputerName $ip -Credential $ipAdministrator
 Enter-PSSession $s
 
-#on Target Machine
+#on Target Machine if not domain joined
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1
 
-
+#or
 $registryPath = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"
 
 $Name = "LocalAccountTokenFilterPolicy"
