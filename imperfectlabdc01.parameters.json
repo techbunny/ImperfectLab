@@ -14,7 +14,7 @@
       "value": "Passw0rd!"
     },
     "dnsNameForPublicIP": {
-      "value": "imperfectlabdc01"
+      "value": "imperfectdc01"
     },
     "location": {
       "value": "West US"
@@ -32,7 +32,7 @@
       "value": "DC01_nic1"
     },
     "publicIPAddressName": {
-      "value": "imperfectDC01"
+      "value": "imperfectlabDC01"
     },
     "vmName": {
       "value": "ImperfectDC01"
