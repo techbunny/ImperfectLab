@@ -26,7 +26,7 @@
       "value": "ImperfectSVRnsg"
     },
     "windowsOSVersion": {
-      "value": "2012-R2-Datacenter"
+      "value": "Windows-Server-Technical-Preview"
     },
     "nicName": {
       "value": "SVR02_nic1"
