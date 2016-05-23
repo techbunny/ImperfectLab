@@ -122,6 +122,15 @@
     "vmSize": {
       "type": "string",
       "defaultValue": "Standard_A1"
+    },
+    "whichSubnet": {
+      "type": "string",
+      "defaultValue": "Subnet10",
+            "allowedValues": [
+        "Subnet10",
+        "Subnet20",
+        "Subnet30"
+         ]
     }
 
    },
@@ -130,7 +139,7 @@
        "apiVersion": "2015-06-15",
        "publicIPAddressType": "Dynamic",
        "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',parameters('vnetName'))]",
-       "subnetRef": "[concat(variables('vnetID'),'/subnets/',parameters('subnet1Name'))]",
+       "subnetRef": "[concat(variables('vnetID'),'/subnets/',parameters('whichSubnet'))]",
        "vmStorageAccountContainerName": "vhds",
        "imagePublisher": "MicrosoftWindowsServer",
        "imageOffer": "WindowsServer",
