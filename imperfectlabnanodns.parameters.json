@@ -1,0 +1,49 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  
+  
+  "parameters": {
+    "newStorageAccountName": {
+      "value": "imperfectstor"
+    },
+    "adminUsername": {
+      "value": "sysadmin"
+    },
+    "adminPassword": {
+      "value": "Passw0rd!xyz"
+    },
+    "dnsNameForPublicIP": {
+      "value": "imperfectnanodns"
+    },
+    "location": {
+      "value": "West US"
+    },
+    "vnetName": {
+      "value": "ImperfectNet"
+    },
+    "networkSecurityGroupName": {
+      "value": "ImperfectCOREnsg"
+    },
+    "windowsOSVersion": {
+      "value": "2016-Nano-Server-Technical-Preview"
+    },
+    "nicName": {
+      "value": "NANODNS_nic1"
+    },
+    "publicIPAddressName": {
+      "value": "imperfectlab_NANODNS"
+    },
+    "vmName": {
+      "value": "ImperfectNANODNS"
+    },
+     "whichSubnet": {
+      "value": "Subnet10"
+     }
+    
+    
+  }
+}
+
+
+
