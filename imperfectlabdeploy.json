@@ -228,6 +228,19 @@
                         "direction": "Inbound"
                     }
                   },
+                              {
+                    "name": "ssh",
+                    "properties": {
+                        "protocol": "Tcp",
+                        "sourcePortRange": "*",
+                        "destinationPortRange": "22",
+                        "sourceAddressPrefix": "*",
+                        "destinationAddressPrefix": "*",
+                        "access": "Allow",
+                        "priority": 130,
+                        "direction": "Inbound"
+                    }
+                  },
                   {
                     "name": "rdp",
                     "properties": {
