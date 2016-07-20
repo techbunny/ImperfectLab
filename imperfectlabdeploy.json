@@ -103,7 +103,8 @@
       "metadata": {
         "description": "Password for the Virtual Machine."
       }
-    },
+      },
+      
     "dnsNameForPublicIP": {
       "type": "string",
       "defaultValue": "smallcloudlab"

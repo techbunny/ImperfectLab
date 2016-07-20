@@ -10,8 +10,13 @@
     "adminUsername": {
       "value": "sysadmin"
     },
-    "adminPassword": {
-      "value": "Passw0rd!xyz"
+   "adminPassword": {
+      "reference": {
+      "keyVault": {
+        "id": "/subscriptions/8bae2860-70c1-4614-b55a-60e97f4248dc/resourceGroups/ImperfectLab/providers/Microsoft.KeyVault/vaults/ImperfectKeyVault"
+      }, 
+      "secretName": "NanoVMPassword" 
+       } 
     },
     "dnsNameForPublicIP": {
       "value": "imperfectdns"
