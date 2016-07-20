@@ -8,7 +8,12 @@
       "value": "imperfectstor"
     },
     "adminUsername": {
-      "value": "sysadmin"
+      "reference": {
+      "keyVault": {
+        "id": "/subscriptions/8bae2860-70c1-4614-b55a-60e97f4248dc/resourceGroups/KeyVaultRG/providers/Microsoft.KeyVault/vaults/ImperfectKeyVault"
+      }, 
+      "secretName": "NanoUserName" 
+       } 
     },
    "adminPassword": {
       "reference": {
