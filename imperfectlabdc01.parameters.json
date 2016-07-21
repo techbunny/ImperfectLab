@@ -1,0 +1,61 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  
+  
+  "parameters": {
+    "newStorageAccountName": {
+      "value": "imperfectstor"
+    },
+   "adminUsername": {
+      "reference": {
+      "keyVault": {
+        "id": "/subscriptions/8bae2860-70c1-4614-b55a-60e97f4248dc/resourceGroups/KeyVaultRG/providers/Microsoft.KeyVault/vaults/ImperfectKeyVault"
+      }, 
+      "secretName": "DCUAdminName" 
+       } 
+    },
+   "adminPassword": {
+      "reference": {
+      "keyVault": {
+        "id": "/subscriptions/8bae2860-70c1-4614-b55a-60e97f4248dc/resourceGroups/KeyVaultRG/providers/Microsoft.KeyVault/vaults/ImperfectKeyVault"
+      }, 
+      "secretName": "DCVMPassword" 
+       } 
+    },
+    "dnsNameForPublicIP": {
+      "value": "imperfectdc01"
+    },
+    "location": {
+      "value": "West US"
+    },
+    "vnetName": {
+      "value": "ImperfectNet"
+    },
+    "networkSecurityGroupName": {
+      "value": "ImperfectDCnsg"
+    },
+    "windowsOSVersion": {
+      "value": "2012-R2-Datacenter"
+    },
+    "nicName": {
+      "value": "DC01_nic1"
+    },
+    "publicIPAddressName": {
+      "value": "imperfectlabDC01"
+    },
+    "vmName": {
+      "value": "ImperfectDC01"
+    },
+    "whichSubnet": {
+      "value": "Subnet10"
+    },
+    "DNSServerAddress": {
+      "value": "192.168.10.4"
+    }
+    
+  }
+}
+
+
+
