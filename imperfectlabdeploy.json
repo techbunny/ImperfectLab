@@ -151,6 +151,7 @@
        "imagePublisher": "MicrosoftWindowsServer",
        "imageOffer": "WindowsServer",
        "osDiskName": "[concat('osdisk_', parameters('vmName'))]"
+       
     },
     
     
