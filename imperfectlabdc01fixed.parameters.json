@@ -1,0 +1,54 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  
+  
+  "parameters": {
+    "newStorageAccountName": {
+      "value": "imperfectstor"
+    },
+    "adminUsername": {
+      "value": "sysadmin"
+    },
+    "adminPassword": {
+      "value": "Passw0rd!"
+    },
+    "dnsNameForPublicIP": {
+      "value": "imperfectdc01"
+    },
+    "location": {
+      "value": "West US"
+    },
+    "vnetName": {
+      "value": "ImperfectNet"
+    },
+    "networkSecurityGroupName": {
+      "value": "ImperfectDCnsg"
+    },
+    "windowsOSVersion": {
+      "value": "2012-R2-Datacenter"
+    },
+    "nicName": {
+      "value": "DC01_nic1"
+    },
+    "publicIPAddressName": {
+      "value": "imperfectlabDC01"
+    },
+    "vmName": {
+      "value": "ImperfectDC01"
+<<<<<<< HEAD
+    },
+    "whichSubnet": {
+      "value": "Subnet10"
+    },
+    "DNSServerAddress": {
+      "value": "192.168.10.4"
+=======
+>>>>>>> parent of e652abc... Edit DC configuration to include secrets; proper subnet
+    }
+    
+  }
+}
+
+
+
