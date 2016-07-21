@@ -280,7 +280,7 @@
           }
         ],
        "dnsSettings": {
-         "dnsServers": []
+         "dnsServers": "[parameters('DNSServerAddress')]"
        },
        "enableIPForwarding": false,
        "networkSecurityGroup": {
