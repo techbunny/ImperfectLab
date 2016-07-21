@@ -150,8 +150,7 @@
        "vmStorageAccountContainerName": "vhds",
        "imagePublisher": "MicrosoftWindowsServer",
        "imageOffer": "WindowsServer",
-       "osDiskName": "[concat('osdisk_', parameters('vmName'))]",
-       "DNSServerAddress": "192.168.10.4"  
+       "osDiskName": "[concat('osdisk_', parameters('vmName'))]"
     },
     
     
