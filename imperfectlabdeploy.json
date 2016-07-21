@@ -133,7 +133,11 @@
         "Subnet20",
         "Subnet30"
          ]
-    }
+    },
+    "DNSServerAddress": {
+      "type": "array",
+      "metadata": {
+        "Description": "The DNS address(es) of the DNS Server(s) used by the VNET"
 
    },
       
@@ -185,6 +189,9 @@
           "addressPrefixes": [
             "[parameters('vnetAddressPrefix')]"
           ]
+        },
+        "dhcpOptions": {
+          "dnsServers": "[parameters('DNSServerAddress')]"
         },
         "subnets": [
           {
