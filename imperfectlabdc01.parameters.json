@@ -8,10 +8,20 @@
       "value": "imperfectstor"
     },
     "adminUsername": {
-      "value": "sysadmin"
+      "reference": {
+      "keyVault": {
+        "id": "/subscriptions/8bae2860-70c1-4614-b55a-60e97f4248dc/resourceGroups/KeyVaultRG/providers/Microsoft.KeyVault/vaults/ImperfectKeyVault"
+      }, 
+      "secretName": "DCUAdminName" 
+       } 
     },
-    "adminPassword": {
-      "value": "Passw0rd!"
+   "adminPassword": {
+      "reference": {
+      "keyVault": {
+        "id": "/subscriptions/8bae2860-70c1-4614-b55a-60e97f4248dc/resourceGroups/KeyVaultRG/providers/Microsoft.KeyVault/vaults/ImperfectKeyVault"
+      }, 
+      "secretName": "DCVMPassword" 
+       } 
     },
     "dnsNameForPublicIP": {
       "value": "imperfectdc01"
@@ -36,6 +46,9 @@
     },
     "vmName": {
       "value": "ImperfectDC01"
+    },
+    "whichSubnet": {
+      "value": "Subnet10"
     }
     
     
