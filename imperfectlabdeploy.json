@@ -192,7 +192,7 @@
           ]
         },
         "dhcpOptions": {
-          "dnsServers": "[parameters('DNSServerAddress')]"
+          "dnsServers": ["192.168.10.4"]
         },
         "subnets": [
           {
@@ -281,7 +281,7 @@
           }
         ],
        "dnsSettings": {
-         "dnsServers": "[parameters('DNSServerAddress')]"
+         "dnsServers": []
        },
        "enableIPForwarding": false,
        "networkSecurityGroup": {
